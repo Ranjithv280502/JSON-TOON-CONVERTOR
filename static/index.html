@@ -9,15 +9,15 @@
 <body>
     <div class="container">
         <header>
-            <h1>JSON to TOON Converter</h1>
-            <p class="subtitle">Convert JSON to Token-Oriented Object Notation for AI/LLM applications</p>
+            <h1>JSON ↔ TOON Converter</h1>
+            <p class="subtitle">Convert between JSON and Token-Oriented Object Notation for AI/LLM applications</p>
         </header>
 
         <div class="main-content">
-            <!-- JSON Input Section -->
+            <!-- Input Section -->
             <div class="input-section">
                 <div class="section-header">
-                    <h2>JSON Input</h2>
+                    <h2 id="input-label">JSON Input</h2>
                     <div class="actions">
                         <button id="clear-input" class="btn-secondary">Clear</button>
                         <button id="example-btn" class="btn-secondary">Load Example</button>
@@ -33,7 +33,12 @@
 
             <!-- Converter Button -->
             <div class="convert-section">
-                <button id="convert-btn" class="btn-convert" title="Convert JSON to TOON">
+                <div class="direction-toggle">
+                    <button id="toggle-direction" class="btn-toggle" title="Switch conversion direction">
+                        <span id="direction-label">JSON → TOON</span>
+                    </button>
+                </div>
+                <button id="convert-btn" class="btn-convert" title="Convert">
                     <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
                         <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="3"/>
                         <path d="M20 30L40 30M35 25L40 30L35 35" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -43,10 +48,10 @@
                 <div id="stats" class="stats"></div>
             </div>
 
-            <!-- TOON Output Section -->
+            <!-- Output Section -->
             <div class="output-section">
                 <div class="section-header">
-                    <h2>TOON Output</h2>
+                    <h2 id="output-label">TOON Output</h2>
                     <div class="actions">
                         <button id="copy-btn" class="btn-secondary">Copy</button>
                         <button id="download-btn" class="btn-secondary">Download</button>
@@ -54,7 +59,7 @@
                 </div>
                 <textarea 
                     id="toon-output" 
-                    placeholder="TOON output will appear here..."
+                    placeholder="Output will appear here..."
                     readonly="readonly"
                     spellcheck="false"
                 ></textarea>
