@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON to TOON Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>JSON to TOON Converter</h1>
+            <p class="subtitle">Convert JSON to Token-Oriented Object Notation for AI/LLM applications</p>
+        </header>
+
+        <div class="main-content">
+            <!-- JSON Input Section -->
+            <div class="input-section">
+                <div class="section-header">
+                    <h2>JSON Input</h2>
+                    <div class="actions">
+                        <button id="clear-input" class="btn-secondary">Clear</button>
+                        <button id="example-btn" class="btn-secondary">Load Example</button>
+                    </div>
+                </div>
+                <textarea 
+                    id="json-input" 
+                    placeholder='Enter your JSON here...&#10;&#10;Example:&#10;{&#10;  "name": "John",&#10;  "age": 30,&#10;  "city": "New York"&#10;}'
+                    spellcheck="false"
+                ></textarea>
+                <div id="input-error" class="error-message"></div>
+            </div>
+
+            <!-- Converter Button -->
+            <div class="convert-section">
+                <button id="convert-btn" class="btn-convert" title="Convert JSON to TOON">
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                        <circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="3"/>
+                        <path d="M20 30L40 30M35 25L40 30L35 35" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Convert</span>
+                </button>
+                <div id="stats" class="stats"></div>
+            </div>
+
+            <!-- TOON Output Section -->
+            <div class="output-section">
+                <div class="section-header">
+                    <h2>TOON Output</h2>
+                    <div class="actions">
+                        <button id="copy-btn" class="btn-secondary">Copy</button>
+                        <button id="download-btn" class="btn-secondary">Download</button>
+                    </div>
+                </div>
+                <textarea 
+                    id="toon-output" 
+                    placeholder="TOON output will appear here..."
+                    readonly="readonly"
+                    spellcheck="false"
+                ></textarea>
+                <div id="output-success" class="success-message"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>TOON (Token-Oriented Object Notation) reduces token usage by 30-60% compared to JSON</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
