@@ -1,19 +1,21 @@
-# JSON to TOON Converter
+# JSON ↔ TOON Converter
 
-A simple web tool that converts JSON into TOON format. TOON (Token-Oriented Object Notation) is basically a more compact way to represent data that works great with AI models. It uses way fewer tokens than regular JSON usually 30-60% less which means cheaper API calls and faster processing.
+A simple web tool that converts between JSON and TOON format bidirectionally. TOON (Token-Oriented Object Notation) is basically a more compact way to represent data that works great with AI models. It uses way fewer tokens than regular JSON usually 30-60% less which means cheaper API calls and faster processing.
 
 ## What It Does
 
-You paste in some JSON, click a button, and get back the same data in TOON format. The app shows you exactly how many tokens you saved, which is pretty useful if you're working with language models.
+You can convert JSON to TOON or TOON back to JSON. Just paste your data, click a button, and get the converted output. The app shows you exactly how many tokens you saved (or gained when converting back), which is pretty useful if you're working with language models.
 
 ## Features
 
+- Bidirectional conversion: JSON → TOON and TOON → JSON
+- Toggle button to easily switch between conversion directions
 - Big input and output boxes so you can see everything clearly
 - Shows token count before and after conversion
-- Copy button to grab the TOON output quickly
-- Download option to save it as a file
-- Example data button to test it out
-- Real-time JSON validation so you know if your input is valid
+- Copy button to grab the output quickly
+- Download option to save it as a file (automatically uses .toon or .json extension)
+- Example data button to test both directions
+- Real-time input validation
 
 ## Getting Started
 
@@ -38,16 +40,25 @@ That's it. The page should load and you can start converting.
 
 ## How to Use
 
-1. Type or paste your JSON into the left box (or click "Load Example" to try it out)
-2. Click the big circular "Convert" button in the middle
-3. Your TOON output appears in the right box
-4. You'll see stats showing how many tokens you saved
-5. Use the Copy or Download buttons if you need the output
+**Converting JSON to TOON:**
+1. Make sure the toggle shows "JSON → TOON" (default)
+2. Type or paste your JSON into the left box (or click "Load Example")
+3. Click the big circular "Convert" button in the middle
+4. Your TOON output appears in the right box
+5. You'll see stats showing how many tokens you saved
 
-You can also press `Ctrl + Enter` while typing JSON to convert it quickly.
+**Converting TOON to JSON:**
+1. Click the toggle button to switch to "TOON → JSON"
+2. Type or paste your TOON format data into the left box (or click "Load Example")
+3. Click "Convert"
+4. Your JSON output appears in the right box
+5. Stats will show the size increase
 
-## Example
+You can also press `Ctrl + Enter` while typing to convert quickly.
 
+## Examples
+
+**JSON to TOON:**
 Input JSON:
 ```json
 {
@@ -64,7 +75,24 @@ age: 30
 city: New York
 ```
 
-The stats will show something like "From 45 tokens to 32 tokens" with the percentage reduction.
+**TOON to JSON:**
+Input TOON:
+```
+name: John
+age: 30
+city: New York
+```
+
+Output JSON:
+```json
+{
+  "name": "John",
+  "age": 30,
+  "city": "New York"
+}
+```
+
+The stats will show token counts and percentage changes for both directions.
 
 ## Project Files
 
